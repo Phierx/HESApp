@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HahasEcoSys.Views.IntroPage"
+             xmlns:vm="clr-namespace:HahasEcoSys.ViewModels"
+             Title="{Binding Title}"
+             BackgroundImageSource="hahaw.png"
+             >
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource ="hahaw.png" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#f2b872</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="{StaticResource Accent}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Margin="35,10,35,0"  Padding="20,0,20,0" VerticalOptions="Center">
+                
+                <Label VerticalOptions="Center" Text="Intro Page" />
+                <Label Text="Mark Up Schedule Price App" TextType="Html"  />
+                <Entry PlaceholderColor="#2aabe4" Placeholder="Desire price" x:Name="name"/>
+                
+
+
+            </StackLayout>
+        </StackLayout>
+        
+    </Grid>
+
+</ContentPage>
